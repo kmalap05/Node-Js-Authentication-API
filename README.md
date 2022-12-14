@@ -16,5 +16,4 @@ Before starting server run one command in terminal/cmd:
 For starting your server you have either of two commands:
 
 1. npm run start
-   OR
 2. npm run server ( Recommended )
