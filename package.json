@@ -1,0 +1,28 @@
+{
+  "name": "node-js-authentication-api-project",
+  "version": "1.0.0",
+  "description": "Json Web Tokens Authentication",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmalap05/Node-Js-Authentication-API.git"
+  },
+  "keywords": [
+    "jwt",
+    "nodejs",
+    "expressjs",
+    "authentication",
+    "api"
+  ],
+  "author": "Kedar Malap",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kmalap05/Node-Js-Authentication-API/issues"
+  },
+  "homepage": "https://github.com/kmalap05/Node-Js-Authentication-API#readme"
+}
