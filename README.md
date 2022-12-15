@@ -16,6 +16,7 @@ In your root directory create an '.env' file and enter details with following va
 
 1. PORT=
 2. MONGODB_URL=
+3. JWT_SECRET_TOKEN=
 
 ---
 
