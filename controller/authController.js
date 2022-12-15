@@ -1,6 +1,7 @@
 const { userModel: User } = require("../models/userModel");
 const asyncHandler = require("express-async-handler");
 const Joi = require("@hapi/joi");
+const { generateToken } = require("../config/jwtToken");
 
 // User Registration
 const userRegistration = asyncHandler(async (req, res, next) => {
@@ -26,7 +27,12 @@ const userLogin = asyncHandler(async (req, res, next) => {
   try {
     const userExist = await User.findOne({ email: email });
     if (userExist && (await userExist.isPasswordMatched(password))) {
-      res.status(200).json(userExist);
+      res
+        .status(200)
+        .header("auth-token", await generateToken(userExist._id))
+        .json({
+          token: generateToken(userExist._id),
+        });
     } else {
       next(error);
     }
