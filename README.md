@@ -4,6 +4,12 @@
 
 **Use Postman For APIs Testing!**
 
+APIs:
+
+- http://localhost:5000/api/user/register (Registration API)
+- http://localhost:5000/api/user/login (Login API)
+- http://localhost:5000/api/user/posts (Posts API)
+
 ---
 
 In your root directory create an '.env' file and enter details with following variable names:
