@@ -2,6 +2,10 @@
 
 ---
 
+**Use Postman For APIs Testing!**
+
+---
+
 In your root directory create an '.env' file and enter details with following variable names:
 
 1. PORT=
