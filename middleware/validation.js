@@ -15,10 +15,11 @@ const registerValidation = asyncHandler(async (req, res, next) => {
     error ? next(error) : next();
   } catch (error) {
     res.status(404);
-    throw new Error("Email Is Not Valid!");
+    throw new Error("Validation Failed!");
   }
 });
 
+// User Login Data Validation
 const loginValidation = asyncHandler(async (req, res, next) => {
   const schema = Joi.object({
     email: Joi.string().required().email(),
@@ -26,13 +27,13 @@ const loginValidation = asyncHandler(async (req, res, next) => {
   });
 
   try {
-    const errorData = await schema.validate(req.body);
-    if (errorData) next(error);
-    next();
+    const { error } = await schema.validate(req.body);
+    // console.log(error);
+    error ? next(error) : next();
   } catch (error) {
     res.status(404);
-    throw new Error(error);
+    throw new Error("Validation Failed!");
   }
 });
 
-module.exports = { registerValidation };
+module.exports = { registerValidation, loginValidation };

@@ -21,5 +21,19 @@ const userRegistration = asyncHandler(async (req, res, next) => {
 });
 
 // User Login
+const userLogin = asyncHandler(async (req, res, next) => {
+  const { email, password } = req.body;
+  try {
+    const userExist = await User.findOne({ email: email });
+    if (userExist && (await userExist.isPasswordMatched(password))) {
+      res.status(200).json(userExist);
+    } else {
+      next(error);
+    }
+  } catch (error) {
+    res.status(400);
+    throw new Error("User Not Found!");
+  }
+});
 
-module.exports = { userRegistration };
+module.exports = { userRegistration, userLogin };
